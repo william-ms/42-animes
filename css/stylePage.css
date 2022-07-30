@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato';
+}
+
+html, body {
+    height: 100%;
+    background-color: #edcd80;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 250px auto 250px;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "header header header"
+        "list content ad"
+        "list footer footer";
+}
+
+/****************************************************************************************************************/
+/*************************************************** HEADER *****************************************************/
+
+header {
+    grid-area: header;
+}
+
+.header-1 {
+    height: 80px;
+    background: url('../images/bg-header.png') center no-repeat;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-1 .logo {
+    width: 360px;
+    height: 60px;
+    margin: 10px;
+    background: url('../images/logo-desktop.png') center no-repeat;
+    background-size: contain;
+}
+
+.header-1 .profile {
+    display: flex;
+    position: relative;
+}
+
+.header-1 .profile-name {
+    margin: 20px 0 0 20px;
+    position: absolute;
+    right: 90px;
+}
+
+.header-1 .profile-img{
+    width: 60px;
+    height: 60px;
+    margin: 10px 20px 10px 10px;
+    border-radius: 120px;
+    background: url('../images/profile.jpg') center no-repeat;
+    background-size: cover;
+}
+
+/****************************************************************************************************************/
+/************************************************** HEADER-2 ****************************************************/
+
+.header-2 {
+    height: 40px;
+    background-color: #e7b463;
+    display: flex;
+    justify-content: space-between;
+}
+    .header-fixed {
+        width: 100%;
+        height: 40px;
+        background-color: #e7b463;
+        z-index: 1;
+        position: fixed;
+        top: 0;
+    }
+
+nav.menu-desktop ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style-type: none;
+    line-height: 40px;
+    padding: 0 20px;
+    background-color: #e7b463;
+}
+    nav ul li:hover {
+        background-color: #cc9b4b;
+    }
+
+    nav ul li:first-child {
+        padding: 0;
+    }
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+nav ul li a.home {
+    display: block;
+    width: 60px;
+    height: 40px;
+    background: url('../images/home-icon.png') center no-repeat;
+    background-size: contain;
+}
+    nav ul li a.home:hover{
+        background: url('../images/home-icon-hover.png') center no-repeat;
+    }
+
+/****************************************************************************************************************/
+/*********************************************** MENU MOBILE ****************************************************/
+
+nav.menu-mobile {
+    display: none;
+    width: 60px;
+    height: 40px;
+    background: url('../images/menu-mobile.png') center no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+    nav.menu-mobile {
+        background: url('../images/menu-mobile-hover.png') center no-repeat;
+    }
+
+nav.menu-mobile ul{
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 120px;
+    z-index: 1;
+    text-align: center;
+    border-top: 1px solid #52360a;
+    border-bottom: 1px solid #52360a;
+}
+
+nav.menu-mobile ul li{
+    border-top: 1px solid #52360a;
+    border-bottom: 1px solid #52360a;
+}
+
+nav.menu-mobile ul li:first-child a{
+    width: 100%;
+}
+
+/****************************************************************************************************************/
+/************************************************** SEARCH ******************************************************/
+
+.header-2 .search{
+    display: flex;
+    position: relative;
+}
+
+.header-2 .search-bar {
+    z-index: -1;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 0;
+    height: 30px;
+    padding-right: 40px;
+    margin: auto 10px;
+    border: 2px solid #cc9b4b;
+    border-radius: 5px;
+    outline: none;
+    transition: width 1s ease-out;
+}
+    .header-2 .search-bar:focus {
+        width: 400px;
+        padding: 0 10px;
+        transition: width 1s ease-in;
+        z-index: 1;
+    }
+
+    .header-2 .search-bar::-webkit-search-cancel-button {
+        margin-right: 50px;
+    }
+
+.header-2 .search label {
+    display: block;
+    width: 60px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    background: url('../images/search-icon.png');
+}
+    .header-2 .search label:hover {
+        background: url('../images/search-icon-hover.png');  
+    }
+
+/****************************************************************************************************************/
+/************************************************** LIST ********************************************************/
+
+section.list {
+    grid-area: list;
+    height: calc(100% - 40px);
+}
+    .list-fixed {
+        transition: 0.2s;
+        position: fixed;
+        top: 40px;
+    }
+
+/****************************************************************************************************************/
+/*************************************************** CONTENT ****************************************************/
+
+section.content {
+    grid-area: content;
+    padding: 20px 0;
+    background-color: white;
+}
+
+section.content h1 {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 40px;
+}
+
+section.content .article {
+    margin: 0 20px;
+    padding: 20px 0;
+}
+
+.article h2 {
+    display: inline-block;
+    margin: 10px 40px;
+}
+
+.article p {
+    margin: 0 50px;
+    word-wrap: break-word;
+}
+    .article p::first-letter {
+        margin-left: 10px;
+    }
+
+.article hr {
+    width: 70%;
+    margin: 15px auto;
+}
+
+.article .img {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.article .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.article .video {
+    width: 80%;
+    height: 400px;
+    margin: 20px auto;
+}
+
+.article .video iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/****************************************************************************************************************/
+/****************************************************** COMMENTS ************************************************/
+
+div.comments {
+    width: 90%;
+    min-height: 300px;
+    max-height: 1000px;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+}
+
+.comment-user{
+    display: flex;
+    margin: 10px;
+}
+
+.comment-img {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background: #ccc;
+}
+
+.comment-new {
+    width: 90%;
+}
+
+.comment-new textarea {
+    width: 100%;
+    margin:  10px 15px;
+    padding: 0 10px;
+    line-height: 2rem;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    resize: none;
+}
+    .comment-new textarea:focus {
+        outline: 0;
+        border: none;
+        border-bottom: 2px solid black;
+    }
+
+.comments input {
+    display: none;
+    float: right;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+}
+
+.comments input[type="button"] {
+    color: gray;
+}
+
+.comments input[type="submit"] {
+    color: white;
+    background-color: gray;
+}
+
+/****************************************************************************************************************/
+/************************************************* ADD **********************************************************/
+
+section.ad {
+    grid-area: ad;
+}
+
+/****************************************************************************************************************/
+/****************************************************** FOOTER **************************************************/
+
+footer {
+    grid-area: footer;
+    height: 230px;
+    background-color: #52360a;   
+}
+
+footer .credenciais {
+    height: 150px;
+    background-color: #e7b463;
+}
+
+footer .footer-logo {
+    width: 480px;
+    height: 60px;
+    margin: 10px auto;
+    background-color: #ccc; 
+}
+
+/****************************************************************************************************************/
+/****************************************************** Media **************************************************/
+
+@media screen and (max-width: 992px){
+
+    body{
+        display: block;
+    }
+
+    section.list{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px){
+
+    .header-1 .logo{
+        width: 200px;
+        height: 60px;
+        margin: 10px;
+        background: url('../images/logo-mobile.png') center no-repeat;
+        background-size: contain;
+    }
+
+    nav.menu-desktop {
+        display: none;
+    }
+
+    nav.menu-mobile {
+        display: block;
+    }
+}

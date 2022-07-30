@@ -1,0 +1,58 @@
+/****************************************************************************************************************/
+/****************************************************** YU-GI-OH ************************************************/
+
+img.character {
+    display: block;
+    margin: 10px auto;
+    width: 40%;
+    border: 3px solid #ccc;
+}
+
+div.mural {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    padding: 10px 0;
+    justify-content: center;
+    border: 5px solid #e7b463;
+    background: url('../images/bg-list.png') center no-repeat;
+    background-size: cover;
+}
+
+div.card {
+    width: calc((100% / 4) - 25px);
+    max-width: 160px;
+    min-width: 100px;
+    margin: 5px;
+    text-align: center;
+    background-color: white;
+    border: 5px solid #e7b463;
+}
+
+div.card .card-img{
+    width: 100%;
+    height: 80%;
+}
+
+div.card  img{
+    width: 100%;
+    height: 100%;
+}
+
+div.card .card-name {
+    height: 20%;
+}
+
+div.card h4 {
+    margin: 5px 5px 10px 5px;
+    font-size: 1.1vw;
+}
+
+
+@media screen and (max-width: 992px){
+
+    div.card h4{
+        font-size: 13px;
+    }
+}
