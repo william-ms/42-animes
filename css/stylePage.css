@@ -58,8 +58,8 @@ header {
     height: 60px;
     margin: 10px 20px 10px 10px;
     border-radius: 120px;
-    background: url('../images/profile.jpg') center no-repeat;
-    background-size: cover;
+    /* background: url('../images/profile.jpg') center no-repeat;
+    background-size: cover; */
 }
 
 /****************************************************************************************************************/
@@ -202,12 +202,45 @@ nav.menu-mobile ul li:first-child a{
 
 section.list {
     grid-area: list;
-    height: calc(100% - 40px);
+    width: 250px;
+    background: url('../images/bg-list.png') center no-repeat;
+    background-size: cover;
 }
     .list-fixed {
         transition: 0.2s;
         position: fixed;
         top: 40px;
+    }
+    ::-webkit-scrollbar {
+        width: 20px;
+        background-color: #edcd80;
+    }
+
+    ::-webkit-scrollbar-track-piece {
+        margin: 10px 0;
+        background-color: black;
+        border: 9px solid #edcd80;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border: 10px solid transparent;
+        border-image: url("../images/scroll-icon.png") 40 round;
+    }
+
+.list h2 {
+    color: black;
+    margin: 10px 10px;
+}
+    
+.list p {
+    display: block;
+    width: 100%;
+    line-height: 24px;
+    padding-left: 20px;
+    color: black;
+}
+    .list p:hover {
+        background-color: #cc9b4b;
     }
 
 /****************************************************************************************************************/
