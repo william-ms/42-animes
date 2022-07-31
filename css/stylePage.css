@@ -126,12 +126,12 @@ nav.menu-mobile {
     background-size: contain;
     cursor: pointer;
 }
-    nav.menu-mobile {
+    nav.menu-mobile:hover {
         background: url('../images/menu-mobile-hover.png') center no-repeat;
     }
 
 nav.menu-mobile ul{
-    display: none;
+    visibility: hidden;
     width: 100%;
     position: absolute;
     top: 120px;
@@ -139,6 +139,10 @@ nav.menu-mobile ul{
     text-align: center;
     border-top: 1px solid #52360a;
     border-bottom: 1px solid #52360a;
+}
+
+nav.menu-active ul{
+    visibility: visible;
 }
 
 nav.menu-mobile ul li{
