@@ -2,17 +2,17 @@
 /********************************************** AJAX CONTEUDO ***************************************************/
 
 function atualizarConteudo() {
-    var content = document.getElementById('content');
-    var url = document.querySelectorAll('.list p');
+    const content = document.getElementById('content');
+    const url = document.querySelectorAll('.list p');
 
-    var xhr;
+    let xhr;
     if (window.XMLHttpRequest) {
         xhr = new XMLHttpRequest();
     } else if (window.ActiveXObject) {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
 
-    for(var i = 0; i < url.length; i++){
+    for(let i = 0; i < url.length; i++){
         let urlAtual = url[i].getAttribute('value');
 
         url[i].addEventListener('click', function(){
@@ -36,6 +36,7 @@ atualizarConteudo();
 function toggleMenu(){
 
     const menuMobile = document.getElementById('menu-mobile');
+    console.log(menuMobile);
 
     menuMobile.addEventListener('click', function(){
         menuMobile.classList.toggle('menu-active');
@@ -46,3 +47,20 @@ toggleMenu();
 
 /****************************************************************************************************************/
 /********************************************** HEADER FIXADO ***************************************************/
+
+function fixarMenu() {
+    const header2 = document.getElementById("header-2");
+    const list = document.getElementById('list');
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            header2.classList.add('header-fixed');
+            list.classList.add("list-fixed");
+        } else {
+            header2.classList.remove('header-fixed');
+            list.classList.remove('list-fixed');
+        }
+    }
+}
+
+fixarMenu();
