@@ -16,3 +16,5 @@ Nesse protótipo eu usei o anime yu-gi-oh! para desenvolver a parte com os decks
 02. Desenvolvi a função para atualizar o contéudo da página usando Ajax.
 
 03. Adicionei a função de rolagem para o menu mobile.
+
+04. Defini a função para fixar o header quando a página rolar.
